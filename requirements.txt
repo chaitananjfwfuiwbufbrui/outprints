@@ -7,7 +7,7 @@ coreschema==0.0.4
 cryptography==38.0.3
 defusedxml==0.7.1
 dj-database-url==0.5.0
-Django==3.0.8
+Django==3.2.20
 django-allauth==0.44.0
 django-cors-headers==3.3.0
 django-crispy-forms==1.10.0
@@ -32,7 +32,7 @@ MarkupSafe==2.1.1
 oauthlib==3.1.0
 packaging==21.3
 phonenumbers==8.12.25
-Pillow
+Pillow==9.5.0
 pycparser==2.21
 PyJWT==1.7.1
 pyparsing==3.0.9
@@ -49,6 +49,7 @@ six==1.15.0
 social-auth-app-django==4.0.0
 social-auth-core==3.3.3
 sqlparse==0.3.1
+typing_extensions==4.7.1
 uritemplate==4.1.1
 urllib3==1.26.2
 whitenoise==5.2.0
