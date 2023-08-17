@@ -38,3 +38,6 @@ class RedirectSocial(View):
         context = super().get_context_data(**kwargs)
         print(context)
         return context
+
+
+

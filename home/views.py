@@ -12,9 +12,11 @@ from rest_framework.parsers import MultiPartParser, FormParser,FileUploadParser
 from django.http import HttpResponse,JsonResponse
 import io
 from django.views.decorators.csrf import csrf_exempt
-
+from authentications.models import *
 from rest_framework.decorators import  api_view, permission_classes
-
+from django.contrib.auth import get_user_model
+User = get_user_model()
+from .serializers import * 
 from rest_framework.response import Response
 
 @api_view(['POST','GET','PUT','DELETE'])
@@ -80,3 +82,11 @@ class login_with_referral(APIView) :
 
         # Redirect to the login page
         return redirect('login')  # Update this with the actual login URL
+class checkthereferals(APIView) :
+    permission_classes = [permissions.AllowAny]
+    parser_classes = (MultiPartParser, FormParser,FileUploadParser)
+    def get(self,request):
+        referred_user = User.objects.all()
+        seralizer = user_referals(referred_user,many = True)
+        message = {"message":"super user created"}
+        return  JsonResponse(seralizer.data,safe=False,status=200)
